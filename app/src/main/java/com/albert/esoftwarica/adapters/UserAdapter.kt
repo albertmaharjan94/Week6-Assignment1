@@ -2,12 +2,14 @@ package com.albert.esoftwarica.adapters
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.albert.esoftwarica.R
 import com.albert.esoftwarica.Storage
@@ -15,7 +17,7 @@ import com.albert.esoftwarica.models.User
 
 
 class UserAdapter(
-    val lstUsers: Array<User>,
+    val lstUsers: ArrayList<User>,
     val context: Context
 ) : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
     val storage = Storage()
@@ -64,6 +66,31 @@ class UserAdapter(
                 holder.tvGender.text = "Other"
                 holder.ivUser.setImageResource(R.drawable.others)
             }
+        }
+        holder.ivDelete.setOnClickListener {
+            val builder = AlertDialog.Builder(context)
+            builder.setTitle("Delete?")
+
+            builder.setMessage("Do you want to Delete?")
+
+            builder.setIcon(android.R.drawable.ic_dialog_info)
+
+            builder.setPositiveButton("YES"){ _, _ ->
+                storage.deleteUser(user)
+                Toast.makeText(context, "User Deleted", Toast.LENGTH_SHORT).show()
+
+                lstUsers.removeAt(position)
+                notifyItemRemoved(position)
+                notifyItemRangeChanged(position, lstUsers.size)
+                holder.itemView.visibility = View.GONE
+            }
+            builder.setNegativeButton("No"){ _, _ ->
+
+            }
+
+            val alert: AlertDialog = builder.create()
+            alert.setCancelable(true)
+            alert.show()
         }
 
     }
