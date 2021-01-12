@@ -1,8 +1,11 @@
 package com.albert.esoftwarica
 
+import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.albert.esoftwarica.fragments.AboutUsFragment
 import com.albert.esoftwarica.fragments.AddStudentFragment
@@ -40,10 +43,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadDefaultUsers() {
-
-        storage.appendUsers(User(null, "John Doe", 30, 'O', "Sundhara"))
-        storage.appendUsers(User(null, "Foo Bar", 20, 'F', "BAZ"))
-        storage.appendUsers(User(null, "Albert Maharjan", 27, 'M', "Bhotebahal"))
+        storage.loadDefault()
     }
 
     private fun makeFragment(f: Fragment): Boolean {
@@ -54,5 +54,24 @@ class MainActivity : AppCompatActivity() {
             commit()
         }
         return true
+    }
+    override fun onBackPressed(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Logout?")
+
+        builder.setMessage("Do you want to logout?")
+
+        builder.setIcon(android.R.drawable.ic_dialog_info)
+
+        builder.setPositiveButton("YES"){ _, _ ->
+            super.onBackPressed()
+        }
+        builder.setNegativeButton("No"){ _, _ ->
+
+        }
+
+        val alert: AlertDialog = builder.create()
+        alert.setCancelable(true)
+        alert.show()
     }
 }

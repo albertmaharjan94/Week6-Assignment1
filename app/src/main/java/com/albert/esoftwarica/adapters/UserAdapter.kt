@@ -71,7 +71,7 @@ class UserAdapter(
             val builder = AlertDialog.Builder(context)
             builder.setTitle("Delete?")
 
-            builder.setMessage("Do you want to Delete?")
+            builder.setMessage("Do you want to delete this user?")
 
             builder.setIcon(android.R.drawable.ic_dialog_info)
 

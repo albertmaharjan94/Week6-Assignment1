@@ -18,6 +18,9 @@ class LoginActivity : AppCompatActivity() {
 
         etUsername = findViewById(R.id.etUsername)
         etPassword = findViewById(R.id.etPassword)
+
+
+
         btnLogin = findViewById(R.id.btnLogin)
         btnLogin.setOnClickListener{
             if(validateForm()){
@@ -26,6 +29,16 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        resetForm()
+    }
+
+    private fun resetForm() {
+        etUsername.setText("")
+        etPassword.setText("")
     }
 
     private fun validateForm(): Boolean {
