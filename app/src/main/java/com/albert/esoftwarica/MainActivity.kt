@@ -47,6 +47,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun makeFragment(f: Fragment): Boolean {
         supportFragmentManager.beginTransaction().apply{
+            this.setCustomAnimations(R.anim.fade_in,
+                R.anim.fade_out);
             replace(R.id.llFragment, f)
             commit()
         }

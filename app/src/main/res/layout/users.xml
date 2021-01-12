@@ -26,6 +26,9 @@
         android:layout_marginLeft="12dp"
         android:layout_marginTop="8dp"
         android:text="Kiran Rana"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/ivUser"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,8 +38,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:text="30"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/ivUser"
         app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
@@ -48,14 +54,17 @@
         android:layout_marginLeft="12dp"
         android:layout_marginTop="28dp"
         android:text="Lalitpurr"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/ivUser"
         app:layout_constraintTop_toBottomOf="@+id/tvAge" />
 
     <ImageView
         android:id="@+id/ivDelete"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@android:drawable/ic_menu_delete"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/delete"
         android:contentDescription="Delete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -64,8 +73,11 @@
         android:id="@+id/tvGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="68dp"
         android:text="Male"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivDelete" />
 
