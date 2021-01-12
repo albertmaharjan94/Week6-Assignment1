@@ -21,7 +21,7 @@ class Storage {
         if(!loaded){
             this.appendUsers(User(null, "John Doe", 30, 'O', "Sundhara"))
             this.appendUsers(User(null, "Foo Bar", 20, 'F', "BAZ"))
-            this.appendUsers(User(null, "Albert Maharjan", 27, 'M', "Bhotebahal"))
+            this.appendUsers(User(null, "Albert Maharjan", 27, 'M', "Bhotebahal", "https://i1.sndcdn.com/avatars-000282623297-brs4gs-t500x500.jpg"))
         }
         loaded = true
     }

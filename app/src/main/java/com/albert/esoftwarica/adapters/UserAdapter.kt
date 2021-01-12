@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.albert.esoftwarica.R
 import com.albert.esoftwarica.Storage
 import com.albert.esoftwarica.models.User
+import com.bumptech.glide.Glide
 
 
 class UserAdapter(
@@ -66,6 +67,9 @@ class UserAdapter(
                 holder.tvGender.text = "Others"
                 holder.ivUser.setImageResource(R.drawable.others)
             }
+        }
+        if(!TextUtils.isEmpty(user.image_url)) {
+            Glide.with(context).load(user.image_url).into(holder.ivUser)
         }
         holder.ivDelete.setOnClickListener {
             val builder = AlertDialog.Builder(context)

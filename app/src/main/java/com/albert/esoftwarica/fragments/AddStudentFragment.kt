@@ -19,6 +19,7 @@ class AddStudentFragment : Fragment() {
     private lateinit var etFullName: EditText
     private lateinit var etAge: EditText
     private lateinit var etAddress: EditText
+    private lateinit var etImageUrl: EditText
     private lateinit var rbMale: RadioButton
     private lateinit var rbFemale: RadioButton
     private lateinit var rbOthers: RadioButton
@@ -37,6 +38,7 @@ class AddStudentFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_add_student, container, false)
         etFullName = view.findViewById(R.id.etFullName)
+        etImageUrl = view.findViewById(R.id.etImageUrl)
         etAge = view.findViewById(R.id.etAge)
         etAddress = view.findViewById(R.id.etAddress)
         rbMale = view.findViewById(R.id.rbMale)
@@ -50,7 +52,8 @@ class AddStudentFragment : Fragment() {
                     etFullName.text.toString(),
                     etAge.text.toString().toInt(),
                     gender,
-                    etAddress.text.toString()
+                    etAddress.text.toString(),
+                    etImageUrl.text.toString(),
                 ))
                 resetForm()
                 Toast.makeText(context, "User Saved", Toast.LENGTH_SHORT).show()
@@ -75,6 +78,7 @@ class AddStudentFragment : Fragment() {
         etFullName.setText("")
         etAge.setText("")
         etAddress.setText("")
+        etImageUrl.setText("")
         gender = null
         rbMale.isChecked = false
         rbFemale.isChecked = false
