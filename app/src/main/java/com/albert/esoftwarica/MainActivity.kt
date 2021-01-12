@@ -40,9 +40,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadDefaultUsers() {
-        storage.appendUsers(User(null, "Kiran Rana", 30, 'M', "Lalitpur"))
-        storage.appendUsers(User(null, "Katrina Kaif", 35, 'F', "Mumbai"))
-        storage.appendUsers(User(null, "Salman Khan", 55, 'M', "Mumbai"))
+
+        storage.appendUsers(User(null, "John Doe", 30, 'O', "Sundhara"))
+        storage.appendUsers(User(null, "Foo Bar", 20, 'F', "BAZ"))
+        storage.appendUsers(User(null, "Albert Maharjan", 27, 'M', "Bhotebahal"))
     }
 
     private fun makeFragment(f: Fragment): Boolean {

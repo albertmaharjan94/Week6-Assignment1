@@ -1,7 +1,7 @@
 package com.albert.esoftwarica
 
 import com.albert.esoftwarica.models.User
-var users = mutableMapOf<Int, User>( 0 to User(0, "Kiran Rana", 30, 'M', "Lalitpur"))
+var users = mutableMapOf<Int, User>()
 class Storage {
     public fun appendUsers(user: User){
         val id = users.size + 1

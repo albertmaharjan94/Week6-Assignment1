@@ -63,7 +63,7 @@ class UserAdapter(
                 holder.ivUser.setImageResource(R.drawable.female)
             }
             else -> {
-                holder.tvGender.text = "Other"
+                holder.tvGender.text = "Others"
                 holder.ivUser.setImageResource(R.drawable.others)
             }
         }
